@@ -86,7 +86,6 @@ def AppendBuildingsToGraph(Graph, dict_of_MaxDepth, DF_BuildingsNodes, InputBuil
 
     Sub_Graph = Graph.subgraph(list_of_wet_nodes)
     Wet_Graph = Sub_Graph.copy()
-    #print(nx.info(Wet_Graph))
     return Wet_Graph, Buildings_df
 
 def NetworkCreationOfWetNodes(Current_lv, LeveeFailures_Nodes, Buildings_df, Wet_Graph, csv_buildings):
@@ -94,7 +93,6 @@ def NetworkCreationOfWetNodes(Current_lv, LeveeFailures_Nodes, Buildings_df, Wet
     Levee_Failures = {}
     with open(LeveeFailures_Nodes) as f:
         for line in f:
-            #(key, val) = re.split(r'/t+', line.rstrip('/t'))
             (key, val) = line.split()
             Levee_Failures[int(key)] = val
             list = val.split(',')
