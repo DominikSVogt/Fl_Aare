@@ -354,19 +354,3 @@ class csvProcesses:
             DF_Completed.to_csv(Path_to_csv, header=column_names, index = False)
         else:  # else it exists so append without writing the header
             DF_Completed.to_csv(Path_to_csv, mode='a', header=False, index = False)
-
-# accum_csv = "C:/Users/Dominik/OneDrive/Dokumente/UniBe/Master/Masterarbeit/99_Test/FlAare_202001/Output_Data_V4/Accum_csv_HasliAare.csv"
-# Levee_failures_shp = "C:/Users/Dominik/OneDrive/Dokumente/UniBe/Master/Masterarbeit/99_Test/FlAare_202001/Input_Data/Aare_LeveeFailures_201911_LV03.shp"
-# LF_shp_WGS84 = "C:/Users/Dominik/OneDrive/Dokumente/UniBe/Master/Masterarbeit/99_Test/FlAare_202001/Temp_Data/LF_shp_WGS84.shp"
-# geojson = "C:/Users/Dominik/OneDrive/Dokumente/UniBe/Master/Masterarbeit/99_Test/FlAare_202001/Output_Data/LeveeWithHouses_HasliAare.geojson"
-# Current_LF = 1
-#
-# GeoJSONPreparation.UniteBuildingsPerLevee(accum_csv, Levee_failures_shp, LF_shp_WGS84, geojson, Current_LF)
-
-# temp_table="C:/Users/Dominik/OneDrive/Dokumente/UniBe/Master/Masterarbeit/99_Test/FlAare_202001/Temp_Data/temp.gdb/Table_Line_Features"
-# temp_point = "C:/Users/Dominik/OneDrive/Dokumente/UniBe/Master/Masterarbeit/99_Test/FlAare_202001/Temp_Data/temp.gdb/Point_Features"
-# Line_Features = "C:/Users/Dominik/OneDrive/Dokumente/UniBe/Master/Masterarbeit/99_Test/FlAare_202001/Temp_Data/temp.gdb/Line_Features"
-# Line_Features_WGS84 = "C:/Users/Dominik/OneDrive/Dokumente/UniBe/Master/Masterarbeit/99_Test/FlAare_202001/Temp_Data/temp.gdb/Line_Features_WGS84"
-# ConnectionLines = "C:/Users/Dominik/OneDrive/Dokumente/UniBe/Master/Masterarbeit/99_Test/FlAare_202001/Output_Data/Buildings2Levees"
-# GeoJSONPreparation.CreateLinesBuildings2Levee(accum_csv, Levee_failures_shp, temp_table, temp_point, Line_Features,
-#                                               Line_Features_WGS84, ConnectionLines)

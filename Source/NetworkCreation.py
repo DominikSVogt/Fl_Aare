@@ -14,15 +14,8 @@ def CreateGraph(df_Edges_total, Nodes):
     #Position = Nodes_copy.to_dict(orient="index")
     dictionary = Nodes_copy.set_index('NODE_ID').T.apply(tuple).to_dict()
 
-    # for v in Position.values():
-    #     for x in v.values():
-    #         x = x / 1000000
-    #         print(x)
-
     ##Create graph and add nodes for the corresponding side of the river to the graph / network
-    Node_ID_list = Nodes['NODE_ID'].tolist()
     Graph = nx.Graph()
-    #Graph.add_nodes_from(Node_ID_list)
     Graph.add_nodes_from(dictionary.keys())
 
     ##test whether the nodes in pandas dataframe exist in the graph. If so, add an edge between them
@@ -42,7 +35,7 @@ def AppendDepthFileToGraph (Depth_df, Graph):
     dict_of_MaxDepth = Depth_df['MaxDepth'].to_dict()
     nx.set_node_attributes(Graph, dict_of_MaxDepth, 'MaxDepth')
     print('All good')
-    print(nx.info(Graph))
+    #print(nx.info(Graph))
     return dict_of_MaxDepth
 
 def AppendBuildingsToGraph(Graph, dict_of_MaxDepth, DF_BuildingsNodes, InputBuildings, NodesShp, buildings_firstjoin, buildings_secondjoin):
@@ -119,7 +112,7 @@ def NetworkCreationOfWetNodes(Current_lv, LeveeFailures_Nodes, Buildings_df, Wet
                 li.append(int(i))
             Levee_Failures[int(key)]=li
 
-    print ('okey...')
+    print ('okey well done')
 
     ##check if nodes of levee failures are connected to buildings
     only_Buildings_df = {k: v for k, v in Buildings_df.items() if v}
