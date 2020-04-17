@@ -77,15 +77,6 @@ def AppendBuildingsToGraph(Graph, dict_of_MaxDepth, DF_BuildingsNodes, InputBuil
 
     Buildings_df = {int(k): int(v) for k, v in Buildings_df.items()}
 
-    # if not len(Buildings_df) == len(dict_of_MaxDepth):
-    #     i = 1
-    #     while i <= len(dict_of_MaxDepth):
-    #         if i not in Buildings_df.keys():
-    #             Buildings_df[i] = 0
-    #             i = i + 1
-    #         else:
-    #             i = i + 1
-
     nx.set_node_attributes(Graph, Buildings_df, 'Buildings_ID')
     print(nx.info(Graph))
 
